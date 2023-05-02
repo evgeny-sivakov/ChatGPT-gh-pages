@@ -8,6 +8,7 @@ import {
   MessageInput,
   TypingIndicator
 } from "@chatscope/chat-ui-kit-react";
+import { getAPI_Key } from "../util/auth";
 
 function ChatPage() {
     const [isTyping, setIsTyping] = useState(false);
@@ -33,6 +34,8 @@ function ChatPage() {
       await processMessageToAI(newMessages);
     };
   
+    const API_KEY = getAPI_Key();
+
     const processMessageToAI = async (chatMessages) => {
       let apiMessages = chatMessages.map((message) => {
         let role = "";
@@ -60,7 +63,7 @@ function ChatPage() {
       await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_API_KEY_second}`,
+          Authorization: "Bearer " + API_KEY,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(apiRequestBody),
