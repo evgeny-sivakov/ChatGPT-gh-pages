@@ -1,20 +1,16 @@
-.form {
+.header {
+  max-width: auto;
+  margin: auto;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
-  max-width: 40rem;
-  margin: 2rem auto;
+  justify-content: right;
 }
 
-.form label,
-.form input {
-  display: block;
-  width: 100%;
+.list {
+  display: flex;
+  gap: 1rem;
 }
 
-.form input {
-  font: inherit;
-  padding: 0.25rem;
-}
 
 button {
   font: inherit;
@@ -25,7 +21,6 @@ button {
   color: rgb(255, 255, 255);
   border: none;
 }
-
 
 button:hover {
   background-color: rgba(21, 159, 201, 0.87);

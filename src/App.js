@@ -3,11 +3,11 @@ import AuthenticationPage, {
   action as authAction,
 } from "./pages/Authentication";
 import ChatPage from "./pages/Chat";
+import {action as logoutAction} from "./pages/Logout"; 
 
 const router = createBrowserRouter([
   {
     path: "/ChatGPT-gh-pages",
-    id: "root",
     children: [
       {
         index: true,
@@ -15,9 +15,11 @@ const router = createBrowserRouter([
         action: authAction,
       },
       { path: "chat", element: <ChatPage /> },
+      { path: "logout", action: logoutAction },
     ],
   },
 ]);
+
 function App() {
   return <RouterProvider router={router} />;
 }

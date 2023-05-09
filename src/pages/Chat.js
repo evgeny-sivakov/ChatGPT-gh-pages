@@ -9,6 +9,7 @@ import {
   TypingIndicator
 } from "@chatscope/chat-ui-kit-react";
 import { getAPI_Key } from "../util/auth";
+import MainNavigation from "../components/MainNavigation";
 
 function ChatPage() {
     const [isTyping, setIsTyping] = useState(false);
@@ -83,8 +84,8 @@ function ChatPage() {
   
     return (
       <div className="App">
-        <button>Sign out</button>
-        <div style={{ position: "relative", width: "700px", height: "600px" }}>
+        <MainNavigation />
+        <div style={{ position: "relative", width: 'auto', height: "600px", padding: "10px" }}>
           <MainContainer>
             <ChatContainer>
               <MessageList

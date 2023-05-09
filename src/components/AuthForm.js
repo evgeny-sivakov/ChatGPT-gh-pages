@@ -15,11 +15,9 @@ function AuthForm() {
             <label htmlFor="apiKey">Enter your OpenAI API key</label>
             <input id="apiKey" type="text" name="apiKey" required />
           </p>
-          <div className={classes.actions}>
-            <button disabled={isSubmitting}>
-              {isSubmitting ? "Submitting..." : "Save"}
-            </button>
-          </div>
+          <button disabled={isSubmitting}>
+            {isSubmitting ? "Submitting..." : "Save"}
+          </button>
         </Form>
         ;
       </>
